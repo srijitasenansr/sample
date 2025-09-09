@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Details</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+    body {
+        background-color: #e5e7eb;
+    }
+</style>
+</head>
+<body class="flex justify-center items-center min-h-screen relative">
+
+<div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl my-8 relative">
+
+    <!-- Red Cross Logo (Top Right Inside Content) -->
+    <div class="absolute top-6 right-6">
+        <a href="landing.html">
+            <img src="https://image2url.com/images/1757344121389-dfeb8b1d-185f-4ffc-8d56-15e41347137b.png" 
+                 alt="Red Cross" 
+                 class="w-14 h-14 cursor-pointer hover:scale-110 transition-transform duration-200">
+        </a>
+    </div>
+
+    <h1 class="text-2xl font-bold text-gray-800 border-b pb-2">Patient Details</h1>
+    <p class="text-gray-700 mt-2">APPAR ID: <span id="apparid"></span></p>
+    <p class="text-gray-600 mt-2">Please fill out the form below with the patient's information.</p>
+
+    <!-- Success message -->
+    <p id="success-message" class="text-green-600 font-semibold mt-4 hidden">
+        Patient details have been recorded successfully
+    </p>
+
+    <!-- Patient Name -->
+    <div class="mt-8">
+        <label class="block text-sm font-medium text-gray-700" for="patient-name">Patient Name</label>
+        <input class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="patient-name" placeholder="e.g., Jane Doe" type="text"/>
+    </div>
+
+    <!-- DOB, Age, Gender -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <div>
+            <label class="block text-sm font-medium text-gray-700" for="dob">Date of Birth</label>
+            <input class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="dob" type="date"/>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700" for="age">Age</label>
+            <input class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="age" placeholder="e.g., 45" type="text"/>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700" for="gender">Gender</label>
+            <select class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="gender">
+                <option>Select</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+                <option>Prefer not to say</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Email + Contact -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div>
+            <label class="block text-sm font-medium text-gray-700" for="email">Email ID</label>
+            <input class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="email" placeholder="e.g., jane.doe@example.com" type="email"/>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700" for="contact-number">Contact Number</label>
+            <input class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="contact-number" placeholder="e.g., +1123 456 7890" type="text"/>
+        </div>
+    </div>
+
+    <!-- Address -->
+    <div class="mt-6">
+        <label class="block text-sm font-medium text-gray-700" for="address">Address</label>
+        <textarea class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="address" placeholder="e.g., 123 Health St, Meditown" rows="3"></textarea>
+    </div>
+
+    <!-- Marital + Blood + Emergency -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <div>
+            <label class="block text-sm font-medium text-gray-700" for="marital-status">Marital Status</label>
+            <select class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="marital-status">
+                <option>Select</option>
+                <option>Single</option>
+                <option>Married</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700" for="blood-group">Blood Group</label>
+            <select class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="blood-group">
+                <option>Select</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700" for="emergency-contact">Emergency Contact</label>
+            <input class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="emergency-contact" placeholder="e.g., +1 098 765 4321" type="text"/>
+        </div>
+    </div>
+
+    <!-- Disease -->
+  <!-- Disease -->
+<div class="mt-6">
+  <label class="block text-sm font-medium text-gray-700">Diseases</label>
+  <div class="flex gap-2">
+    <textarea 
+      id="disease" 
+      readonly
+      rows="3"
+      class="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm"
+      placeholder="Click + Add to add diseases">
+    </textarea>
+    <button 
+      id="add-disease-btn" 
+      type="button"
+      class="mt-1 bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+      + Add
+    </button>
+  </div>
+</div>
+
+
+    <!-- Medical Tests -->
+    <div class="mt-8">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">Medical Tests</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- X-Ray -->
+        <label class="flex items-center gap-4 border p-3 rounded-md shadow-sm cursor-pointer hover:bg-gray-50">
+          <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+          <span class="font-medium text-gray-700">X-Ray</span>
+          <img src="https://image2url.com/images/1757344981129-f0a258f4-16e9-4ed2-a470-88296a21d02c.png"
+               alt="X-Ray" class="h-16 w-auto rounded-md ml-auto">
+        </label>
+
+        <!-- MRI -->
+        <label class="flex items-center gap-4 border p-3 rounded-md shadow-sm cursor-pointer hover:bg-gray-50">
+          <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+          <span class="font-medium text-gray-700">MRI</span>
+          <img src="https://image2url.com/images/1757345140251-af5da915-92e1-498e-9c15-0a3b5049ccf6.png"
+               alt="MRI" class="h-16 w-auto rounded-md ml-auto">
+        </label>
+
+        <!-- Blood Test -->
+        <label class="flex items-center gap-4 border p-3 rounded-md shadow-sm cursor-pointer hover:bg-gray-50">
+          <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+          <span class="font-medium text-gray-700">Blood Test</span>
+          <img src="https://image2url.com/images/1757345320111-ae0fbc3c-f583-42a3-bb68-e62b441924d0.png"
+               alt="Blood Test" class="h-16 w-auto rounded-md ml-auto">
+        </label>
+
+        <!-- ECG -->
+        <label class="flex items-center gap-4 border p-3 rounded-md shadow-sm cursor-pointer hover:bg-gray-50">
+          <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+          <span class="font-medium text-gray-700">ECG</span>
+          <img src="https://image2url.com/images/1757345140251-af5da915-92e1-498e-9c15-0a3b5049ccf6.png"
+               alt="ECG" class="h-16 w-auto rounded-md ml-auto">
+        </label>
+
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="mt-8 flex justify-end">
+        <button id="save-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" type="button">
+            Save
+        </button>
+    </div>
+
+</div>
+
+<!-- AYUSH Logo (Bottom Left) -->
+<div class="absolute bottom-6 left-6">
+    <img src="https://image2url.com/images/1757322486619-3c11f4f9-ec48-4c1d-9a13-2d37e502581c.png" 
+         alt="AYUSH Logo" 
+         class="w-44 h-auto">
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const apparid = urlParams.get("apparid");
+    if (apparid) {
+        document.getElementById("apparid").innerText = apparid;
+    }
+
+    const saveBtn = document.getElementById('save-btn');
+    const successMsg = document.getElementById('success-message');
+
+    saveBtn.addEventListener('click', function() {
+        successMsg.classList.remove('hidden');
+
+        // Reset inputs
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            if (input.tagName === "SELECT") {
+                input.selectedIndex = 0;
+            } else if (input.type === "checkbox") {
+                input.checked = false;
+            } else {
+                input.value = '';
+            }
+        });
+
+        setTimeout(() => successMsg.classList.add('hidden'), 3000);
+    });
+
+    // Add Disease -> redirect to landing.html
+    document.getElementById("add-disease-btn").addEventListener("click", function() {
+        window.location.href = "diseasesdetection.html";
+    });
+</script>
+
+</body>
+</html>

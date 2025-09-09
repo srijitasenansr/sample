@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Electronic Medical Record</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style type="text/tailwindcss">
+    :root {
+        --outer-bg: #E3F2FD;
+        --inner-bg: #F0F8FF;
+    }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--outer-bg);
+    }
+</style>
+</head>
+<body>
+<div class="container mx-auto p-4">
+
+  <!-- Header / Navigation -->
+  <header class="bg-white rounded-full shadow-md p-4 mb-8 flex justify-between items-center">
+    <!-- EMR Button Left -->
+    <a href="emr.html" class="px-4 py-2 bg-gray-200 text-gray-900 font-bold rounded-full hover:bg-gray-300">EMR</a>
+
+    <!-- Other links Right -->
+    <nav class="flex space-x-4 items-center">
+      <a class="hover:text-blue-500" href="landing.html">Home</a>
+      <a class="hover:text-blue-500" href="about.html">About Us</a>
+      <a class="hover:text-blue-500" href="contactus.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="bg-[var(--inner-bg)] rounded-2xl shadow-lg p-10 flex flex-col lg:flex-row items-center relative">
+
+    <!-- AyushSetu Logo Bottom-Left -->
+    <div class="absolute left-6 bottom-6">
+      <img 
+        src="https://image2url.com/images/1757322165909-d01806ef-a458-4e31-829f-35a62a689484.png" 
+        alt="AyushSetu Logo" 
+        class="w-44 h-auto"
+      />
+    </div>
+
+    <!-- Left Content -->
+    <div class="lg:w-1/2 lg:pr-12 z-10">
+      <div class="bg-blue-500 text-white rounded-xl p-6 mb-8">
+        <h1 class="text-4xl font-bold text-center">Electronic Medical Record (EMR)</h1>
+      </div>
+      <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+        EMR refers to the digital version of a patient's paper chart, containing medical history, diagnoses, medications, treatment plans, immunization dates, allergies and test results.
+      </p>
+
+      <!-- Search Form -->
+      <form action="emrpateint.html" method="GET" class="relative w-full max-w-sm">
+        <input 
+          class="w-full bg-blue-500 text-white placeholder-white font-semibold py-3 pl-6 pr-12 rounded-full focus:outline-none" 
+          placeholder="APPAR ID" 
+          type="text" 
+          name="apparid"
+          required
+        />
+        <button type="submit" class="absolute inset-y-0 right-0 flex items-center justify-center w-12 h-full text-white bg-blue-600 rounded-full">
+          <span class="material-icons">search</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Content / Illustration -->
+    <div class="lg:w-1/2 mt-8 lg:mt-0 relative z-10">
+      <img alt="Illustration of doctors and a patient's medical record on a clipboard" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk6ja3tU0BJygaWOxnt5COhUfdDZN20Y-FiDWVhimeqzQlqGDi7ESB54gEmoKIrhWZAJb0VADCy2Dq3AujP2nYchHrwMN_AJzwvAki1qyNngjucBPok1gL2FD4p6Vt2DS6jMIbpxP4DSEpUInZLwCrC9SNftZJXgOCXkr7Ku1RfzlsKBDY1WpcwAfboa7s8yXf-hCp2aEd6kNAof5gP2zCU3hTTrUBLkXdL8Lxh_qLmI-jU8MBBDWElJUTYuwD6chSLiu4df9CpB0"/>
+    </div>
+
+  </main>
+
+</div>
+</body>
+</html>

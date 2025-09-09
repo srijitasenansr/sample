@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Create an Account</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-blue-50">
+  <div class="flex min-h-screen">
+    
+    <!-- Left Form Section -->
+    <div class="w-1/2 flex flex-col justify-center items-center p-12 relative">
+
+      <!-- Logo at top-left -->
+      <img 
+        src="https://image2url.com/images/1757327225030-a50f227b-9dd9-491b-92e5-c5cb4d2d86be.png" 
+        alt="Logo" 
+        class="h-20 w-auto absolute top-0 left-0 m-4"
+      />
+
+      <div class="w-full max-w-sm">
+        <h1 class="text-3xl font-bold mb-8 text-gray-800">Create an account</h1>
+        <form>
+          <div class="mb-4 relative">
+            <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+              person
+            </span>
+            <input class="w-full pl-10 pr-4 py-3 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Username" type="text"/>
+          </div>
+          <div class="mb-6 relative">
+            <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+              lock
+            </span>
+            <input class="w-full pl-10 pr-4 py-3 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Password" type="password"/>
+          </div>
+          <a href="login.html" class="w-full block text-center bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Create account</a>
+        </form>
+        <p class="mt-8 text-center text-gray-500">
+          Already have an account? <a class="text-indigo-600 font-semibold hover:underline" href="login.html">Log in</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Image Section -->
+    <div class="w-1/2 bg-gray-100 flex justify-center items-center">
+      <img alt="A doctor talking to a patient in a modern hospital setting, conveying care and professionalism." class="w-full h-full object-cover" src="https://image2url.com/images/1757329599947-7804ef13-b4da-490a-b1f6-9d4e103898a5.png"/>
+    </div>
+  </div>
+</body>
+</html>

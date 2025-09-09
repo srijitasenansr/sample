@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Login Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+    body { font-family: 'Poppins', sans-serif; }
+</style>
+</head>
+<body class="bg-blue-100 flex items-center justify-center min-h-screen">
+
+<div class="flex w-full max-w-6xl mx-auto p-8 bg-white shadow-2xl rounded-2xl overflow-hidden relative">
+
+    <!-- Logo inside card -->
+    <img src="https://image2url.com/images/1757322486619-3c11f4f9-ec48-4c1d-9a13-2d37e502581c.png" 
+         alt="Logo" 
+         class="absolute top-4 right-4 w-28 h-auto"/>
+
+    <!-- Left side image -->
+    <div class="w-1/2 hidden md:flex items-center justify-center pr-12">
+        <img alt="Illustration of medical professionals working" 
+             class="w-full h-auto object-cover rounded-lg" 
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa3GLxwPE_vfo5zVxcCcPNs0ORckbUgcNg0KPshxp3y3fXfMbx1JyCwXOtwsXwysa3vO_aSj-Dgo4IP3heMASTB_Vg7CBP-8Ik1RSc8-J-Rn7HgmgdV8Bf1eIds_A8EhhKvMwaWcjqN05vh93Stibv1zrCBXkpYn82g75C5_muMi8KrcSemMFy2kqG2yrI1jl-PcSPOhl2v7OlY84sc1VCvjAMKY4TsOf_pAkaOYIcQ_O5D478iDna_RE20Pr63f0-bP6VtN_a3L-C"/>
+    </div>
+
+    <!-- Right side form -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center pl-0 md:pl-12">
+        <div class="text-center mb-10">
+            <h1 class="text-5xl font-bold text-gray-800 mb-2">Welcome</h1>
+            <p class="text-gray-500">Log in to access your dashboard</p>
+        </div>
+
+        <!-- Login Form -->
+        <form action="landing.html" method="GET" class="w-full space-y-6">
+            <div class="relative">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                    person
+                </span>
+                <input class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg 
+                       focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300" 
+                       id="username" placeholder="Username" type="text" required />
+            </div>
+            <div class="relative">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                    lock
+                </span>
+                <input class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg 
+                       focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300" 
+                       id="password" placeholder="Password" type="password" required />
+            </div>
+            <button class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg 
+                         hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 
+                         focus:ring-blue-500 transition-all duration-300 shadow-lg 
+                         hover:shadow-xl transform hover:-translate-y-0.5" 
+                         type="submit">
+                Log In
+            </button>
+        </form>
+
+        <!-- Sign Up Link -->
+        <div class="text-center mt-8">
+            <p class="text-gray-500">Don't have an account? 
+                <a class="text-blue-600 font-semibold hover:underline" href="signup.html">Sign Up</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

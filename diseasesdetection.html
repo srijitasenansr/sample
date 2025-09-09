@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Disease Code Finder</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-blue-50">
+  <div class="container mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-800">Disease Code Finder</h1>
+      <p class="text-gray-600 mt-2">Enter a disease to find its Ayurveda name, code, and ICD-11 details.</p>
+    </div>
+
+    <!-- Main Box -->
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <!-- Input Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="flex items-center gap-4">
+          <label class="block text-sm font-medium text-gray-700 whitespace-nowrap" for="disease-input">Disease Name</label>
+          <div class="flex w-full">
+            <input class="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                   id="disease-input"
+                   placeholder="Enter disease name..."
+                   type="text"/>
+            <button id="enter-btn"
+                    class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-blue-500">
+              Enter
+            </button>
+          </div>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- Table -->
+      <div class="mt-8 overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr>
+              <th class="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-r border-gray-200">AYUSH</th>
+              <th class="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-200" colspan="2"></th>
+              <th class="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-r border-gray-200">WHO</th>
+              <th class="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-200" colspan="2"></th>
+            </tr>
+            <tr>
+              <th class="py-4 px-6 font-semibold text-sm text-gray-600 border-b border-r border-gray-200">Disease</th>
+              <th class="py-4 px-6 font-semibold text-sm text-gray-600 border-b border-r border-gray-200">Code</th>
+              <th class="py-4 px-6 font-semibold text-sm text-gray-600 border-b border-r border-gray-200">Symptom</th>
+              <th class="py-4 px-6 font-semibold text-sm text-gray-600 border-b border-r border-gray-200">Disease</th>
+              <th class="py-4 px-6 font-semibold text-sm text-gray-600 border-b border-r border-gray-200">Code</th>
+              <th class="py-4 px-6 font-semibold text-sm text-gray-600 border-b border-gray-200">Symptom</th>
+            </tr>
+          </thead>
+          <tbody id="disease-table">
+            <tr class="hover:bg-gray-50">
+              <td class="py-4 px-6 border-b border-r border-gray-200">-</td>
+              <td class="py-4 px-6 border-b border-r border-gray-200">-</td>
+              <td class="py-4 px-6 border-b border-r border-gray-200">-</td>
+              <td class="py-4 px-6 border-b border-r border-gray-200">-</td>
+              <td class="py-4 px-6 border-b border-r border-gray-200">-</td>
+              <td class="py-4 px-6 border-b border-gray-200">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Buttons -->
+      <div class="mt-8 flex justify-end gap-4">
+        <button id="save-btn"
+                class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          Save
+        </button>
+        <button id="exit-btn"
+                class="px-6 py-2 bg-gray-300 text-gray-800 font-semibold rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
+          Exit
+        </button>
+      </div>
+
+      <!-- Success Message -->
+      <p id="success-message" class="mt-4 text-green-600 font-semibold hidden">
+        ✅ Your record has been successfully submitted
+      </p>
+    </div>
+
+    <footer class="text-center text-gray-500 mt-12">
+      <p>© 2025 Disease Code Finder. Data is for demonstrative purposes only.</p>
+    </footer>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const diseaseInput = document.getElementById("disease-input");
+    const enterBtn = document.getElementById("enter-btn");
+    const saveBtn = document.getElementById("save-btn");
+    const exitBtn = document.getElementById("exit-btn");
+    const tableBody = document.getElementById("disease-table");
+    const successMsg = document.getElementById("success-message");
+
+    let diseaseList = [];
+
+    // Add disease to the table
+    enterBtn.addEventListener("click", () => {
+      const disease = diseaseInput.value.trim();
+      if (disease !== "") {
+        diseaseList.push(disease);
+
+        const row = document.createElement("tr");
+        row.className = "hover:bg-gray-50";
+        row.innerHTML = `
+          <td class="py-4 px-6 border-b border-r border-gray-200">${disease}</td>
+          <td class="py-4 px-6 border-b border-r border-gray-200">-</td>
+          <td class="py-4 px-6 border-b border-r border-gray-200">-</td>
+          <td class="py-4 px-6 border-b border-r border-gray-200">-</td>
+          <td class="py-4 px-6 border-b border-r border-gray-200">-</td>
+          <td class="py-4 px-6 border-b border-gray-200">-</td>
+        `;
+        tableBody.appendChild(row);
+
+        diseaseInput.value = "";
+      }
+    });
+
+    // Save diseases to localStorage
+    saveBtn.addEventListener("click", () => {
+      if (diseaseList.length > 0) {
+        localStorage.setItem("savedDiseases", JSON.stringify(diseaseList));
+        successMsg.classList.remove("hidden");
+
+        setTimeout(() => {
+          successMsg.classList.add("hidden");
+        }, 3000);
+      }
+    });
+
+    // Exit button → back to patient.html
+    exitBtn.addEventListener("click", () => {
+      window.location.href = "pateint.html";
+    });
+  </script>
+</body>
+</html>

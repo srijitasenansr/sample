@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EMR Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style type="text/tailwindcss">
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+</head>
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+<div class="container mx-auto p-4">
+  <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-200">
+      <a href="emr.html" class="bg-gray-200 text-black font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">EMR</a>
+      <nav class="flex items-center space-x-10 text-gray-600">
+        <a class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1" href="#">Home</a>
+        <a class="hover:text-indigo-600" href="about.html">About Us</a>
+        <a class="hover:text-indigo-600" href="contactus.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="bg-blue-50 relative">
+      <!-- Background shapes -->
+      <div class="absolute inset-0 bg-white z-0" style="clip-path: polygon(0 0, 100% 0, 100% 20%, 0 100%);"></div>
+      <div class="absolute inset-0 bg-blue-700 z-0" style="clip-path: polygon(100% 0, 100% 100%, 50% 100%, 75% 0); opacity: 0.8"></div>
+
+      <!-- Content -->
+      <div class="relative flex flex-col md:flex-row items-center justify-between p-12 lg:p-20 z-10">
+
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2 text-gray-800">
+          <h1 class="text-4xl md:text-5xl font-bold mb-2">Tradition to</h1>
+          <h1 class="text-4xl md:text-5xl font-bold text-blue-600 mb-6">Technology.</h1>
+          <p class="text-gray-600 mb-8 max-w-md">
+            Our platform empowers doctors to record patient details in Namaste code and seamlessly convert them into globally recognized ICD-11 codes. This ensures accurate, standardized healthcare data while preserving traditional knowledge.
+          </p>
+
+          <!-- Search Form -->
+          <form action="pateint.html" method="GET" class="relative w-full max-w-sm">
+            <input 
+              class="w-full py-3 pl-4 pr-12 text-gray-700 bg-blue-500 text-white placeholder-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
+              placeholder="APPAR ID" 
+              type="text" 
+              name="apparid" 
+              required
+            >
+            <button type="submit" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white">
+              <span class="material-icons">search</span>
+            </button>
+          </form>
+        </div>
+
+ <!-- Right Content -->
+<div class="w-full md:w-1/2 flex justify-center mt-10 md:mt-0">
+  <div class="relative">
+    <!-- Softer circular glow -->
+    <div class="absolute inset-0 bg-blue-400 rounded-full scale-105 opacity-30"></div>
+
+    <!-- Circle container for image -->
+    <div class="bg-white rounded-full p-2 shadow-lg overflow-hidden relative z-10 w-80 h-80 flex items-center justify-center">
+      <img 
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT2gp4ExKYh5E6UU3hpFga2pQ6uc5476ECOf3iXi5bYZaKOXn_cDD9B0ki5R9997A04NZhJu4I6UQkM4ZCTc0rRyXwIc_VCkCoE1e1k-r0x0zJn2CrLyiO79lfGtHr96Ff0qZifpKZ8bh4pXhtfF5LHA9IjNT7CJRlIw1zSNxvGb2Tp0Ws_dh9nTPvhhlxRGr-xgzxY1Tay0eKEm4Sbl9_Kx7ph7bRkmrM3H4e1t-l9aFNN5am2zeYmH7ULaBe5nhY8xO2FHoxciFl" 
+        alt="Illustration of three medical professionals" 
+        class="w-full h-full object-contain"
+      />
+    </div>
+  </div>
+</div>
+
+
+      </div>
+
+      <!-- Logo at bottom-left corner -->
+      <img 
+        src="https://image2url.com/images/1757322165909-d01806ef-a458-4e31-829f-35a62a689484.png" 
+        alt="Logo" 
+        class="w-28 h-auto absolute bottom-4 left-4 z-10"
+      />
+
+    </main>
+
+  </div>
+</div>
+</body>
+</html>
